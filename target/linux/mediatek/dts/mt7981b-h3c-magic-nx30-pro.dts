@@ -55,22 +55,6 @@
 			gpios = <&pio 5 GPIO_ACTIVE_LOW>;
 		};
 	};
-
-	ubi-concat {
-		compatible = "mtd-concat";
-		devices = <&ubi_concat0 &plugin_concat1>;
-
-		partitions {
-			compatible = "fixed-partitions";
-			#address-cells = <1>;
-			#size-cells = <1>;
-
-			partition@0 {
-				label = "ubi";
-				reg = <0x0 0x6580000>;
-			};
-		};
-	};
 };
 
 &eth {
@@ -152,33 +136,8 @@
 			};
 
 			ubi_concat0: partition@580000 {
-				label = "ubi_concat0";
-				reg = <0x0580000 0x4000000>;
-			};
-
-			/* yaffs partition */
-			partition@4580000 {
-				label = "pdt_data";
-				reg = <0x4580000 0x0600000>;
-				read-only;
-			};
-
-			/* yaffs partition */
-			partition@4b80000 {
-				label = "pdt_data_1";
-				reg = <0x4b80000 0x0600000>;
-				read-only;
-			};
-
-			partition@5180000 {
-				label = "exp";
-				reg = <0x5180000 0x0100000>;
-				read-only;
-			};
-
-			plugin_concat1: partition@5280000 {
-				label = "plugin_concat1";
-				reg = <0x5280000 0x2580000>;
+				label = "ubi";
+				reg = <0x0580000 0x7000000>;
 			};
 		};
 	};
