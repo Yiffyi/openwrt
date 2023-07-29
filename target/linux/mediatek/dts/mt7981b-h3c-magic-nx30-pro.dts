@@ -151,7 +151,7 @@
 				read-only;
 			};
 
-			partition@580000 {
+			ubi_concat0: partition@580000 {
 				label = "ubi_concat0";
 				reg = <0x0580000 0x4000000>;
 			};
@@ -176,7 +176,7 @@
 				read-only;
 			};
 
-			partition@5280000 {
+			plugin_concat1: partition@5280000 {
 				label = "plugin_concat1";
 				reg = <0x5280000 0x2580000>;
 			};
