@@ -135,7 +135,7 @@
 				read-only;
 			};
 
-			ubi_concat0: partition@580000 {
+			partition@580000 {
 				label = "ubi";
 				reg = <0x0580000 0x7000000>;
 			};
