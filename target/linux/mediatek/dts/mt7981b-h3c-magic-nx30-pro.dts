@@ -148,7 +148,6 @@
 			partition@380000 {
 				label = "FIP";
 				reg = <0x0380000 0x0200000>;
-				read-only;
 			};
 
 			ubi_concat0: partition@580000 {
