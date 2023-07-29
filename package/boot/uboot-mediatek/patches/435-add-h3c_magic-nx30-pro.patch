@@ -1,6 +1,6 @@
 --- /dev/null
 +++ b/configs/mt7981_h3c_magic-nx30-pro_defconfig
-@@ -0,0 +1,175 @@
+@@ -0,0 +1,176 @@
 +CONFIG_ARM=y
 +CONFIG_POSITION_INDEPENDENT=y
 +CONFIG_ARCH_MEDIATEK=y
@@ -116,6 +116,7 @@
 +# CONFIG_DM_MMC is not set
 +CONFIG_MTD=y
 +CONFIG_MTD_UBI_FASTMAP=y
++CONFIG_MTD_CONCAT=y
 +CONFIG_DM_PCI=y
 +CONFIG_PCIE_MEDIATEK=y
 +CONFIG_PINCTRL=y
