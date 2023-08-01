@@ -1,6 +1,6 @@
 --- /dev/null
 +++ b/configs/mt7981_h3c_magic-nx30-pro_defconfig
-@@ -0,0 +1,176 @@
+@@ -0,0 +1,175 @@
 +CONFIG_ARM=y
 +CONFIG_POSITION_INDEPENDENT=y
 +CONFIG_ARCH_MEDIATEK=y
@@ -116,7 +116,6 @@
 +# CONFIG_DM_MMC is not set
 +CONFIG_MTD=y
 +CONFIG_MTD_UBI_FASTMAP=y
-+CONFIG_MTD_CONCAT=y
 +CONFIG_DM_PCI=y
 +CONFIG_PCIE_MEDIATEK=y
 +CONFIG_PINCTRL=y
@@ -179,7 +178,7 @@
 +CONFIG_SERVERIP="192.168.1.254"
 --- /dev/null
 +++ b/arch/arm/dts/mt7981_h3c_magic-nx30-pro.dts
-@@ -0,0 +1,216 @@
+@@ -0,0 +1,180 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Copyright (c) 2022 MediaTek Inc.
@@ -229,22 +228,6 @@
 +		status_green {
 +			label = "green:status";
 +			gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+
-+	ubi-concat {
-+		compatible = "mtd-concat";
-+		devices = <&ubi_concat0 &plugin_concat1>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "ubi";
-+				reg = <0x0 0x6580000>;
-+			};
 +		};
 +	};
 +};
@@ -365,29 +348,9 @@
 +				reg = <0x0380000 0x0200000>;
 +			};
 +
-+			ubi_concat0: partition@580000 {
-+				label = "ubi_concat0";
-+				reg = <0x0580000 0x4000000>;
-+			};
-+
-+			partition@4580000 {
-+				label = "pdt_data";
-+				reg = <0x4580000 0x0600000>;
-+			};
-+
-+			partition@4b80000 {
-+				label = "pdt_data_1";
-+				reg = <0x4b80000 0x0600000>;
-+			};
-+
-+			partition@5180000 {
-+				label = "exp";
-+				reg = <0x5180000 0x0100000>;
-+			};
-+
-+			plugin_concat1: partition@5280000 {
-+				label = "plugin_concat1";
-+				reg = <0x5280000 0x2580000>;
++			partition@580000 {
++				label = "ubi";
++				reg = <0x0580000 0x7280000>;
 +			};
 +		};
 +	};
