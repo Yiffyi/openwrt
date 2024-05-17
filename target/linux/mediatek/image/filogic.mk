@@ -401,7 +401,7 @@ define Device/h3c_magic-nx30-pro-nmbm
   DEVICE_DTS := mt7981b-h3c-magic-nx30-pro-nmbm
   $(call Device/h3c_magic-nx30-pro-common)
 endef
-TARGET_DEVICES += h3c_magic-nx30-nmbm
+TARGET_DEVICES += h3c_magic-nx30-pro-nmbm
 
 define Device/h3c_magic-nx30-pro-114m-ubootmod
   DEVICE_MODEL := Magic NX30 Pro (114M UBI layout)
