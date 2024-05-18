@@ -559,6 +559,7 @@ UBOOT_TARGETS := \
 	mt7981_cmcc_rax3000m-emmc \
 	mt7981_cmcc_rax3000m-nand \
 	mt7981_h3c_magic-nx30-pro \
+  mt7981_h3c_magic-nx30-pro-114m-ubootmod \
 	mt7981_jcg_q30-pro \
 	mt7981_rfb-spim-nand \
 	mt7981_rfb-emmc \
