@@ -225,10 +225,22 @@ define U-Boot/mt7981_cmcc_rax3000m-nand
 endef
 
 define U-Boot/mt7981_h3c_magic-nx30-pro
-  NAME:=H3C Magic NX30 Pro
+  NAME:=H3C Magic NX30 Pro (OpenWrt U-Boot layout)
   BUILD_SUBTARGET:=filogic
   BUILD_DEVICES:=h3c_magic-nx30-pro
   UBOOT_CONFIG:=mt7981_h3c_magic-nx30-pro
+  UBOOT_IMAGE:=u-boot.fip
+  BL2_BOOTDEV:=spim-nand
+  BL2_SOC:=mt7981
+  BL2_DDRTYPE:=ddr3
+  DEPENDS:=+trusted-firmware-a-mt7981-spim-nand-ddr3
+endef
+
+define U-Boot/mt7981_h3c_magic-nx30-pro-114m-ubootmod
+  NAME:=H3C Magic NX30 Pro (114M UBI layout)
+  BUILD_SUBTARGET:=filogic
+  BUILD_DEVICES:=h3c_magic-nx30-pro-114m-ubootmod
+  UBOOT_CONFIG:=mt7981_h3c_magic-nx30-pro-114m-ubootmod
   UBOOT_IMAGE:=u-boot.fip
   BL2_BOOTDEV:=spim-nand
   BL2_SOC:=mt7981
@@ -583,6 +595,7 @@ UBOOT_TARGETS := \
 	mt7981_cmcc_rax3000m-emmc \
 	mt7981_cmcc_rax3000m-nand \
 	mt7981_h3c_magic-nx30-pro \
+  mt7981_h3c_magic-nx30-pro-114m-ubootmod \
 	mt7981_jcg_q30-pro \
 	mt7981_rfb-spim-nand \
 	mt7981_rfb-emmc \

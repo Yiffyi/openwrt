@@ -122,6 +122,8 @@ platform_do_upgrade() {
 		emmc_do_upgrade "$1"
 		;;
 	h3c,magic-nx30-pro|\
+	h3c,magic-nx30-pro-114m-ubootmod|\
+	h3c,magic-nx30-pro-nmbm|\
 	jcg,q30-pro|\
 	mediatek,mt7981-rfb|\
 	netcore,n60|\
